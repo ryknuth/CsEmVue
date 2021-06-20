@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.Extensions.CognitoAuthentication" Version="2.2.1" />
+    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.7.0.31" />
+    <PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.7.1.2" />
+    <PackageReference Include="AWSSDK.Core" Version="3.7.0.33" />
+    <PackageReference Include="MySql.Data" Version="8.0.25" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>
