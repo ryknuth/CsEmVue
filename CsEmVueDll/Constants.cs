@@ -37,6 +37,21 @@
 
         const string YEAR = "1Y";
         static public Scale Year => new Scale(YEAR);
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Scale)
+                return (obj as Scale).Value == Value;
+            else if (obj is string)
+                return (obj as string) == Value;
+            else
+                return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
     }
 
     public class Unit
@@ -51,6 +66,21 @@
         public override string ToString()
         {
             return Value;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Unit)
+                return (obj as Unit).Value == Value;
+            else if (obj is string)
+                return (obj as string) == Value;
+            else
+                return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
         }
 
         const string KWH = "KilowattHours";
@@ -73,7 +103,6 @@
 
         const string CARBON = "Carbon";
         public Unit Carbon => new Unit(CARBON);
-
     }
 
     static public class Constants
