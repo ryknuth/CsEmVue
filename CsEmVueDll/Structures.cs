@@ -129,14 +129,46 @@ namespace CsEmVue
     [DataContract]
     public class ChannelUsage
     {
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
+
+        [DataMember(Name = "usage")]
+        public double Usage { get; set; }
+
         [DataMember(Name = "deviceGid")]
         public int DeviceGid { get; set; }
 
         [DataMember(Name = "channelNum")]
         public string ChannelNum { get; set; }
 
-        [DataMember(Name = "usage")]
-        public ChartUsage Usage { get; set; }
+        [DataMember(Name = "percentage")]
+        public double Percentage { get; set; }
+    }
+
+    [DataContract]
+    public class DeviceListUsages
+    {
+        [DataMember(Name = "instant")]
+        public DateTime Instant { get; set; }
+
+        [DataMember(Name = "scale")]
+        public string Scale { get; set; }
+
+        [DataMember(Name = "energyUnit")]
+        public string Unit { get; set; }
+
+        [DataMember(Name = "devices")]
+        public DeviceUsages[] DeviceUsages { get; set; }
+    }
+
+    [DataContract]
+    public class DeviceUsages
+    {
+        [DataMember(Name = "deviceGid")]
+        public int DeviceGid { get; set; }
+
+        [DataMember(Name = "channelUsages")]
+        public ChannelUsage[] ChannelUsages { get; set; }
     }
 
     [DataContract]

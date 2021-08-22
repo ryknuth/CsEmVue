@@ -84,12 +84,12 @@ namespace CsEmVue
             return response.Devices;
         }
 
-        public async Task<IEnumerable<ChannelUsage>> GetDevicesUsage(DateTime time, Scale scale, Unit unit, IEnumerable<Device> devices)
+        public async Task<DeviceListUsages> GetDeviceListUsages(DateTime time, Scale scale, Unit unit, IEnumerable<Device> devices)
         {
             var gids = string.Join('+', devices.Select(d => d.DeviceGid));
             var url = string.Format(Constants.API_ROOT + Constants.API_DEVICES_USAGE, gids, FormatDateTime(time), scale, unit);
-            var response = await SendGetRequest<GetDevicesUsageResponse>(url);
-            return response.ChannelUsages;
+            var response = await SendGetRequest<GetDeviceListUsagesResponse>(url);
+            return response.DeviceListUsages;
         }
 
         public async Task GetDeviceLocationProperties(Device device)

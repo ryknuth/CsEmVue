@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace CsEmVue
 {
@@ -10,9 +11,9 @@ namespace CsEmVue
     }
 
     [DataContract]
-    public class GetDevicesUsageResponse
+    public class GetDeviceListUsagesResponse
     {
-        [DataMember(Name = "channelUsages")]
-        public ChannelUsage[] ChannelUsages { get; set; }
+        [DataMember(Name = "deviceListUsages")]
+        public DeviceListUsages DeviceListUsages { get; set; }
     }
 }

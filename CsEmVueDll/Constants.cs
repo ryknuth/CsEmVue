@@ -109,8 +109,8 @@
     {
         public const string API_ROOT = "https://api.emporiaenergy.com";
         public const string API_CUSTOMER = "/customers?email={0}";
-        public const string API_CUSTOMER_DEVICES = "/customers/{0}/devices?detailed=true&hierarchy=true";
-        public const string API_DEVICES_USAGE = "/AppAPI?apiMethod=getDevicesUsage&deviceGids={0}&instant={1}&scale={2}&energyUnit={3}";
+        public const string API_CUSTOMER_DEVICES = "/customers/devices";
+        public const string API_DEVICES_USAGE = "/AppAPI?apiMethod=getDeviceListUsages&deviceGids={0}&instant={1}&scale={2}&energyUnit={3}";
         public const string API_CHART_USAGE = "/AppAPI?apiMethod=getChartUsage&deviceGid={0}&channel={1}&start={2}&end={3}&scale={4}&energyUnit={5}";
         public const string API_DEVICE_PROPERTIES = "/devices/{0}/locationProperties";
         public const string API_OUTLET = "/devices/outlet";
