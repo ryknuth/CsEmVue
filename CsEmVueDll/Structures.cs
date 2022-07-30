@@ -229,7 +229,7 @@ namespace CsEmVue
         public DateTime Start { get; set; }
 
         [DataMember(Name = "usageList")]
-        public IEnumerable<double> Usages { get; set; }
+        public IEnumerable<double?> Usages { get; set; }
     }
 
     [DataContract]

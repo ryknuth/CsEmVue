@@ -102,7 +102,7 @@ namespace CsEmVue
         public async Task<Usage> GetChartUsage(Channel channel, DateTime start, DateTime end, Scale scale, Unit unit)
         {
             if (channel.ChannelNum == "MainsFromGrid" || channel.ChannelNum == "MainsToGrid")
-                return new Usage() { Start = start, Usages = new List<double>() };
+                return new Usage() { Start = start, Usages = new List<double?>() };
 
             var url = string.Format(Constants.API_ROOT + Constants.API_CHART_USAGE, channel.DeviceGid, channel.ChannelNum, FormatDateTime(start), FormatDateTime(end), scale, unit);
             var response = await SendGetRequest<Usage>(url);
